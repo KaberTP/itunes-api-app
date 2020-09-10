@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "14.10.0",
-    "npm": "6.14.8"
+    "node": "12.x",
+    "npm": "6.x"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
+    "build": "webpack",
     "heroku-postbuild": "cd itunes-api-app run build"
   },
   "author": "",
