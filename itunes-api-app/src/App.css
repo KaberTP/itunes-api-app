@@ -1,0 +1,128 @@
+
+/*--------------------------------ALL-----------------------------------*/
+* {
+  box-sizing: border-box;
+  margin : 0;
+}
+/*--------------------------------HEADER--------------------------------*/
+header {
+  padding: 30px 0 30px 0;
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  margin-top: 0;
+}
+
+header h1 {
+  display: inline;
+  margin-left: 15px;
+  font-weight: 300;
+}
+/*--------------------------------SEARCH AREA----------------------------*/
+.searchArea{
+  margin: 1em;
+}
+/*--------------------------------SEARCH LIST----------------------------*/
+.container{
+  display: inline;
+}
+
+.searchedItems {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+
+/*--------------------------------FAVOURITES----------------------------*/
+.favourite{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  overflow: hidden;
+  margin-bottom: 1em;
+}
+
+.favourite button{
+  height: 28px;
+  width: 28px;
+  margin-left: auto ;
+  font-size: xx-small;
+}
+
+.favourite p {
+  margin-left: 1em;
+  color: darkslategray;
+}
+/*--------------------------------CARDS--------------------------------*/
+
+.card {
+  width: 300px;
+  height: 150px;
+  background-color: #fff;
+  background: linear-gradient(#f8f8f8, #fff);
+  box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  margin: 0.5rem;
+}
+
+.card h4 {
+  text-align: center;
+}
+
+.card .additional {
+  position: absolute;
+  width: 60px;
+  height: 100%;
+  background: linear-gradient(#dfdad9, #8d8786);
+  transition: width 0.4s;
+  overflow: hidden;
+  z-index: 0;
+}
+
+
+.card:hover .additional {
+  width: 100%;
+  border-radius: 0 5px 5px 0;
+}
+
+
+.card .additional .user-card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10%;
+  right: -2px;
+  height: 80%;
+  border-left: 2px solid rgba(0,0,0,0.025);
+}
+
+.card .general {
+  width: 240px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.card .general .favButton {
+  right: 0;
+  top: 60%;
+  padding: 1em;
+  z-index: 9;
+  position: absolute;
+}
+
+.general .p {
+  font-size: 10;
+}
+
