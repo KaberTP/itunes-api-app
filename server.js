@@ -6,6 +6,9 @@ const fetch = require('isomorphic-fetch');
 const bodyParser = require('body-parser');
 const items = [];
 const api = 'https://itunes.apple.com/search?term=';
+const path = require("path");
+
+
 
 //Add bodyPaser
   
@@ -22,10 +25,13 @@ app.post('/',(req,res)=> {
           res.json(result);
         });
   })
-
-app.get('*',(req,res) =>{
-  res.sendFile(path.join(__dirname+'itunes-api-app/build/index.html'));
-})
+  if (process.env.NODE_ENV === "production"){
+    app.use(express.static("frontend/build"));
+  
+    app.get('*',(req,res) =>{
+  res.sendFile(path.resolve(__dirname, "itunes-api-app", "build", "index.html"));
+  })
+} 
 
 //IN PRODUCTION 
 
